@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIGNIN/SIGNUP</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="form-cont sign-up" id="sign-up">
+        <form action="reg.php" method="post">
+          <h1>Create Account</h1>
+          <div class="social-acc"></div>
+          <span></span>
+          <input type="text" placeholder="Last Name" name="lastName" required />
+          <input
+            type="text"
+            placeholder="First Name"
+            name="firstName"
+            required
+          />
+          <input type="email" placeholder="Email" name="email" required />
+          <input
+            type="number"
+            placeholder="Phone Number"
+            name="phoneNum"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Unit Address"
+            name="unitAdd"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            name="confirmPass"
+            required
+          />
+          <button>Sign Up</button>
+        </form>
+      </div>
+      <div class="form-cont sign-in" id="sign-in">
+        <form action="login.php" method="post">
+          <h1>Sign In</h1>
+          <div class="social-acc"></div>
+          <span></span>
+          <input type="text" placeholder="Email" name="email" required />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            required
+          />
+          <a href="#">Forget your password?</a>
+          <button>Sign In</button>
+        </form>
+      </div>
+      <div class="toggle-cont">
+        <div class="toggle">
+          <div class="toggle-panel tog-left">
+            <h1>Already registered?</h1>
+            <p>Enter your registered account here to continue.</p>
+            <button class="hidden" id="signIn">Sign In</button>
+          </div>
+          <div class="toggle-panel tog-right">
+            <h1>Hello!</h1>
+            <p>Register with your personal details here.</p>
+            <button class="hidden" id="signUp">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      /*-----SIGNIN/SIGNUP-----*/
+      const container = document.getElementById("container");
+      const regBtn = document.getElementById("signUp");
+      const signinBtn = document.getElementById("signIn");
+
+      regBtn.addEventListener("click", () => {
+        container.classList.add("active");
+      });
+
+      signinBtn.addEventListener("click", () => {
+        container.classList.remove("active");
+      });
+    </script>
+  </body>
+</html>
